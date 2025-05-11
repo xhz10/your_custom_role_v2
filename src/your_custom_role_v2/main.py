@@ -90,7 +90,11 @@ def read_test_info():
 
 @app.post("/role-play-reply")
 def rol_play_reply(inputs: RoleInput):
-    return reply(inputs.username,
+    res_str = reply(inputs.username,
                  inputs.role,
                  inputs.input_dialog)
+    return {
+        "res":res_str
+    }
+
 

@@ -1,6 +1,10 @@
+from chromadb import EmbeddingFunction, Documents, Embeddings
 from crewai import Agent, Crew, Process, Task
+from crewai.memory import LongTermMemory
+from crewai.memory.storage.ltm_sqlite_storage import LTMSQLiteStorage
 from crewai.project import CrewBase, agent, crew, task
 
+from your_custom_role_v2.embedding.ZhiPuEmbedding import embedding
 from your_custom_role_v2.listener.RoleListener import MyCustomListener
 
 # If you want to run a snippet of code before or after the crew starts,
@@ -9,6 +13,13 @@ from your_custom_role_v2.listener.RoleListener import MyCustomListener
 
 
 role_listener = MyCustomListener()
+
+
+class CustomEmbedder(EmbeddingFunction):
+    def __call__(self, input: Documents) -> Embeddings:
+        # generate embeddings
+        rsp = embedding(input)
+        return rsp
 
 @CrewBase
 class YourCustomRoleV2():
@@ -50,5 +61,17 @@ class YourCustomRoleV2():
             tasks=self.tasks, # Automatically created by the @task decorator
             process=Process.sequential,
             verbose=True,
+            memory=True,
+            long_term_memory=LongTermMemory(
+                storage=LTMSQLiteStorage(
+                    db_path="test_long_term_memory_storage.db"
+                )
+            ),
+            embedder={
+                "provider": "custom",
+                "config": {
+                    "embedder": CustomEmbedder()
+                }
+            }
             # process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
         )

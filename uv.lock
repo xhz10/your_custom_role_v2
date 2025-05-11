@@ -2734,11 +2734,11 @@ wheels = [
 
 [[package]]
 name = "pyjwt"
-version = "2.10.1"
+version = "2.8.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/e7/46/bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726/pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953", size = 87785, upload_time = "2024-11-28T03:43:29.933Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/72/8259b2bccfe4673330cea843ab23f86858a419d8f1493f66d413a76c7e3b/PyJWT-2.8.0.tar.gz", hash = "sha256:57e28d156e3d5c10088e0c68abb90bfac3df82b40a71bd0daa20c65ccd5c23de", size = 78313, upload_time = "2023-07-18T20:02:22.594Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/61/ad/689f02752eeec26aed679477e80e632ef1b682313be70793d798c1d5fc8f/PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb", size = 22997, upload_time = "2024-11-28T03:43:27.893Z" },
+    { url = "https://files.pythonhosted.org/packages/2b/4f/e04a8067c7c96c364cef7ef73906504e2f40d690811c021e1a1901473a19/PyJWT-2.8.0-py3-none-any.whl", hash = "sha256:59127c392cc44c2da5bb3192169a91f429924e17aff6534d70fdc02ab3e04320", size = 22591, upload_time = "2023-07-18T20:02:21.561Z" },
 ]
 
 [[package]]
@@ -3823,12 +3823,30 @@ source = { editable = "." }
 dependencies = [
     { name = "agentops" },
     { name = "crewai", extra = ["tools"] },
+    { name = "zhipuai" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "agentops", specifier = ">=0.4.10" },
     { name = "crewai", extras = ["tools"], specifier = ">=0.114.0,<1.0.0" },
+    { name = "zhipuai", specifier = ">=2.1.5.20250421" },
+]
+
+[[package]]
+name = "zhipuai"
+version = "2.1.5.20250421"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cachetools" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "pydantic-core" },
+    { name = "pyjwt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/74/3a/622508148236575f9b80d0af9d51c2fe8b91133388a90b197be44d63ef16/zhipuai-2.1.5.20250421.tar.gz", hash = "sha256:11fe754ea11f5ec7c806ec281ecc4a169a4371f347b1cecccea6f0e538dc17ea", size = 69494, upload_time = "2025-04-21T03:00:54.019Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b9/09/9aab30ba41501e83dd696c827eb539d05e39fe5d902cdabccf97166b7de1/zhipuai-2.1.5.20250421-py3-none-any.whl", hash = "sha256:98d3bf624d8da0f5f9003bfd053b86349a17ccd8724f52334903e6ae6ea8b974", size = 110510, upload_time = "2025-04-21T03:00:52.565Z" },
 ]
 
 [[package]]
