@@ -1,7 +1,7 @@
 from your_custom_role_v2.crew import YourCustomRoleV2
 
 
-def reply(username:str,custom_role:str,user_input:str) -> str:
+def reply(username: str, custom_role: str, user_input: str) -> str:
     """
     Run the crew.
     """
@@ -18,7 +18,7 @@ def reply(username:str,custom_role:str,user_input:str) -> str:
         raise Exception(f"An error occurred while running the crew: {e}")
 
 
-def train_role(username:str,custom_role:str,user_input:str):
+def train_role(username: str, custom_role: str, user_input: str):
     """
         Run the crew.
         """
