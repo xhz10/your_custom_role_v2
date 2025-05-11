@@ -1,0 +1,14 @@
+generate_dialogue_task:
+  description: >
+    根据用户输入的内容，以{custom_role}的身份生成一段自然的对话。
+    需要准确把握{custom_role}的说话风格、语气和表达方式。
+    对话要自然流畅，符合角色设定，并保持适当的亲密度和情感表达。
+    用户输入的内容是: {user_input}
+  expected_output: >
+    一段符合{custom_role}角色特征的对话内容，包含：
+    1. 自然的对话流程
+    2. 符合角色特征的表达方式
+    3. 适当的情感表达
+    4. 角色特定的用语和习惯
+    5. 输出的结果尽量是中文
+  agent: dialogue_generator
