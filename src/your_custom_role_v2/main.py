@@ -3,7 +3,6 @@ import sys
 import warnings
 
 from datetime import datetime
-import agentops
 from starlette.middleware.cors import CORSMiddleware
 
 from your_custom_role_v2.CrewCustomHandler import reply
