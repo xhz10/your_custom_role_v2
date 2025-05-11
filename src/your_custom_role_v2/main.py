@@ -4,6 +4,7 @@ import warnings
 
 from datetime import datetime
 import agentops
+from starlette.middleware.cors import CORSMiddleware
 
 from your_custom_role_v2.CrewCustomHandler import reply
 from your_custom_role_v2.crew import YourCustomRoleV2
@@ -77,6 +78,14 @@ def test():
 
 app = FastAPI()
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 允许所有来源，生产环境中建议设置具体的域名
+    allow_credentials=True,
+    allow_methods=["*"],  # 允许所有方法
+    allow_headers=["*"],  # 允许所有请求头
+)
 
 @app.get("/test-info")
 def read_test_info():
