@@ -12,7 +12,7 @@ from your_custom_role_v2.listener.RoleListener import MyCustomListener
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
 
-role_listener = MyCustomListener()
+# role_listener = MyCustomListener()
 
 
 class CustomEmbedder(EmbeddingFunction):
@@ -64,7 +64,7 @@ class YourCustomRoleV2():
             memory=True,
             long_term_memory=LongTermMemory(
                 storage=LTMSQLiteStorage(
-                    db_path="test_long_term_memory_storage.db"
+                    db_path="./long_history/long_term_memory_storage.db"
                 )
             ),
             embedder={

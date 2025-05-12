@@ -2,4 +2,6 @@
 __pycache__/
 .DS_Store
 ./tests
-src/your_custom_role_v2/test_long_term_memory_storage.db
+
+./src/your_custom_role_v2/long_histpry/
+./src/your_custom_role_v2/train_history/
