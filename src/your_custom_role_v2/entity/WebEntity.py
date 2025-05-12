@@ -19,3 +19,7 @@ class TrainRoleInput(BaseModel):
     custom_role: str
     user_input: Optional[str] = None
     iter_cnt: Optional[int] = 1
+
+
+class ChatResponse(BaseModel):
+    chat_response: Optional[str] = None

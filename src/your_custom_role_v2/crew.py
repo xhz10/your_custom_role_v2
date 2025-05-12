@@ -5,6 +5,7 @@ from crewai.memory.storage.ltm_sqlite_storage import LTMSQLiteStorage
 from crewai.project import CrewBase, agent, crew, task
 
 from your_custom_role_v2.embedding.ZhiPuEmbedding import embedding
+from your_custom_role_v2.entity.WebEntity import ChatResponse
 from your_custom_role_v2.listener.RoleListener import MyCustomListener
 
 # If you want to run a snippet of code before or after the crew starts,
@@ -47,6 +48,7 @@ class YourCustomRoleV2():
     def generate_dialogue_task(self) -> Task:
         return Task(
             config=self.tasks_config['generate_dialogue_task'],
+            output_pydantic=ChatResponse
         )
 
 

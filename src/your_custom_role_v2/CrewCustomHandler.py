@@ -13,6 +13,7 @@ def reply(username: str, custom_role: str, user_input: str) -> str:
 
     try:
         output = YourCustomRoleV2().crew().kickoff(inputs=inputs)
-        return output.raw
+        res_pydantic = output.pydantic
+        return res_pydantic.chat_response
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
